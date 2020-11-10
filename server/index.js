@@ -9,13 +9,19 @@ app.use(helmet());
 app.use(morgan('tiny'));
 app.use(cors());
 app.use(express.json());
+app.use(express.static('./public'));
 
-app.get('/:id', (req, res) => {
-    res.json({
-        message: 'hornsandhooves - Short Urls for you'
-    });
-});
-
+//app.get('/url/:id', (req, res) => {
+//    // ToDo: get a short url by id
+//});
+//
+//app.get('/:id', (req, res) => {
+//    // ToDo: redirect to url
+//});
+//
+//app.get('/url', (req, res) => {
+//    //ToDo create a short url
+//});
 
 const port = process.env.PORT || 8080;
 app.listen(port, () => {
